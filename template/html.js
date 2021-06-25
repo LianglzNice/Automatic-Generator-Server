@@ -49,7 +49,7 @@ module.exports = function(data){
             continue;
         }
 
-        let model = item.hasModel ? `v-model="${item.name + (i+1)}"` : '';
+        let model = item.isModel ? `v-model="${item.name + (i+1)}"` : '';
 
         dom += `${sp(11)}<div class="${item.name}-${i+1}">\r\n`;
         switch(item.value){
@@ -74,7 +74,7 @@ module.exports = function(data){
         dom += `${sp(11)}</div>\r\n`;
 
         //列举script
-        if(item.hasModel){
+        if(item.isModel){
             if(item.value === 4){
                 script += `${sp(23)}${item.name + (i+1)} : [1],\r\n`;
             }else{
